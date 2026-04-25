@@ -1,0 +1,222 @@
+:root {
+  --bg: #ffffff;
+  --ink: #000000;
+  --ink-muted: #7c7c7c;
+  --rule: #eaeaea;
+  --lime: #d6f41f;
+  --magenta: #fa2bb8;
+  --cyan: #00dcd2;
+
+  --font-display: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+a:hover {
+  background-color: var(--lime);
+}
+
+mark {
+  background: var(--lime);
+  color: var(--ink);
+  padding: 0 0.15em;
+}
+
+em { font-style: italic; }
+
+.entry {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 96px 32px 64px;
+}
+
+.entry__eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.entry__headword {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(56px, 12vw, 144px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0 0 24px;
+}
+
+.entry__headword::after {
+  content: ".";
+  color: var(--lime);
+}
+
+.entry__pronunciation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color: var(--ink-muted);
+  margin: 0 0 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry__phonetic {
+  font-family: var(--font-body);
+}
+
+.entry__pos em {
+  color: var(--ink);
+  font-style: italic;
+}
+
+.senses {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sense {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 8px 16px;
+  margin-bottom: 48px;
+}
+
+.sense__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.sense__def {
+  font-size: 22px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+  grid-column: 2;
+}
+
+.sense__example {
+  grid-column: 2;
+  margin: 0;
+  padding: 16px 20px;
+  background: #fafafa;
+  border-left: 3px solid var(--lime);
+  font-size: 17px;
+  color: #333;
+}
+
+.sense__label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+
+.entry__h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 56px 0 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.entry__etymology p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.related {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.related li {
+  padding: 6px 12px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.entry__footer {
+  margin-top: 96px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+
+.colophon {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.colophon a {
+  color: var(--ink-muted);
+  border-bottom-color: var(--ink-muted);
+}
+
+@media (max-width: 520px) {
+  .entry { padding: 56px 20px 48px; }
+  .sense { grid-template-columns: 36px 1fr; gap: 4px 12px; }
+  .sense__num { font-size: 24px; }
+  .sense__def { font-size: 19px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --ink: #ffffff;
+    --ink-muted: #999999;
+    --rule: #1a1a1a;
+  }
+  .sense__example { background: #0d0d0d; color: #ccc; }
+  .related li { border-color: #fff; }
+}
