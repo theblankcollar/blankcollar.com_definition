@@ -39,11 +39,27 @@ a:hover {
 
 mark {
   background: var(--lime);
-  color: var(--ink);
+  color: #000;
   padding: 0 0.15em;
+  font-weight: 600;
+}
+
+mark.mark--magenta {
+  background: var(--magenta);
+  color: #fff;
+}
+
+.accent-magenta {
+  color: var(--magenta);
 }
 
 em { font-style: italic; }
+
+s {
+  text-decoration: line-through;
+  text-decoration-color: var(--magenta);
+  text-decoration-thickness: 3px;
+}
 
 .entry {
   max-width: var(--max-width);
@@ -95,6 +111,17 @@ em { font-style: italic; }
   font-style: italic;
 }
 
+.entry__lede {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 4.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 64px;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
 .senses {
   list-style: none;
   margin: 0;
@@ -131,6 +158,10 @@ em { font-style: italic; }
   border-left: 3px solid var(--lime);
   font-size: 17px;
   color: #333;
+}
+
+.sense--magenta .sense__example {
+  border-left-color: var(--magenta);
 }
 
 .sense__label {
@@ -219,4 +250,6 @@ em { font-style: italic; }
   }
   .sense__example { background: #0d0d0d; color: #ccc; }
   .related li { border-color: #fff; }
+  mark { color: #000; }
+  mark.mark--magenta { color: #fff; }
 }
