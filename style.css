@@ -202,10 +202,28 @@ s {
 }
 
 .related li {
-  padding: 6px 12px;
+  padding: 0;
   border: 1px solid var(--ink);
   border-radius: 999px;
   font-size: 14px;
+  overflow: hidden;
+  transition: background-color 120ms ease;
+}
+
+.related a {
+  display: inline-block;
+  padding: 6px 14px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 120ms ease;
+}
+
+.related li:hover {
+  background-color: var(--lime);
+}
+.related li:hover a {
+  color: #000;
 }
 
 .entry__footer {
