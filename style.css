@@ -241,6 +241,30 @@ s {
   margin: 0 0 24px;
 }
 
+.blog-cta {
+  margin: 0 0 24px;
+}
+
+.blog-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: #000;
+  background: var(--lime);
+  border: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  border-radius: 999px;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.blog-link:hover {
+  background: var(--magenta);
+  color: #fff;
+}
+
 .colophon {
   font-size: 13px;
   color: var(--ink-muted);
